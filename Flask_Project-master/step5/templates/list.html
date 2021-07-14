@@ -10,10 +10,13 @@
 	</thead>
 	
 	<tbody>
-		{% for todo in todos%}
+		{% for todo in todos %}
 		<tr>
-			<td class="text-center"><a href="./done?_id={{ todo['_id'] }}"><input type="image" 
-				src="static/images/{{todo['done']}}.png" alt="Submit ME" width="30"></a></td>
+			<td class="text-center">
+				<a href="./done?_id={{ todo['_id'] }}">
+					<input type="image" src="static/images/{{todo['done']}}.png" alt="Submit ME" width="30">
+				</a>
+			</td>
 			<td>
 				<strong>{{ todo["contents"] }}</strong><br>
 				- {{ todo["date"].strftime("%Y-%m-%d") }}
@@ -31,10 +34,14 @@
 
 			<td class="text-center">
 				<img src="{{ url_for('static', filename='images/trash.png') }}", width="30"
-				data-toggle="modal" data-target="#exampleModal" ) /></td>
+				data-toggle="modal" data-target="#exampleModal" ) />
+			</td>
 			
-			<td class="text-center"><a href="./update?_id={{ todo['_id'] }}">
-				<img src="{{ url_for('static', filename='images/edit.png') }}" , width="30"></a></td>
+			<td class="text-center">
+				<a href="./update?_id={{ todo['_id'] }}">
+					<img src="{{ url_for('static', filename='images/edit.png') }}" , width="30">
+				</a>
+			</td>
 		</tr>
 
 		<div class="model fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
